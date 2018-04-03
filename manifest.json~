@@ -1,0 +1,6 @@
+{
+    "name":"Chrome Video Player",
+    "version":"0.0",
+    "description":"A video player integrated to chrome",
+    "manifest_version":1
+}
