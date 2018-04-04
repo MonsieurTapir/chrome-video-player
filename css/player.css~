@@ -1,5 +1,13 @@
-.fullscreen{
+.fulltab{
     position: absolute;
     width: 100%;
     height:100%;
+    background: #000000;
 }
+#go-form{
+    height:100vh;
+}
+.top-offset{
+    margin-top:20vh;
+}
+
