@@ -75,7 +75,7 @@ $(document).ready(function () {
 		    subs.push({name:pre,url:url});
 		}
 	    }
-	    else if(ext==="mp4"){
+	    else if(ext==="mp4" || ext==="mkv"){
 		var item={name:pre,
 			  video_url:url,
 			  sub_url:null,
@@ -94,7 +94,7 @@ $(document).ready(function () {
 	}
 	for(k=0; k<added.length;k++){
 	    var sub=added[k].sub_url===null?"":"(subs)";
-	    $("#playlist").append("<li ><a class=\"playlist_item\" id=\"item-"+added[k].id+"\">"+added[k].name+ sub +" </a></li>");
+	    $("#playlist").append("<li ><a class=\"playlist_item\" id=\"item-"+added[k].id+"\">"+added[k].name.substring(0,12)+ sub +" </a></li>");
 	    play_list.push(added[k]);
 	    $(".playlist_item").click(function(){
 		index=this.id.split("-").pop();
