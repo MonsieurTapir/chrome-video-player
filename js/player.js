@@ -4,7 +4,11 @@ var src_vid =$("#source-vid");
 var src_sub=$("#track-sub");
 var playing=false;
 var ready=false;
-
+function handler_one_time(e){
+	    e.target.removeEventListener(e.type, arguments.callee);
+	    current++;
+	    play();
+}
 function play(){
     console.log(current);
     if(current < play_list.length){
@@ -23,12 +27,8 @@ function play(){
 	ready=true;
 	$(".playlist_item").removeClass("active");
 	$("#item-"+current).addClass("active");
-	
 	var vid=$("#vid")[0];
-	vid.addEventListener('ended', function(e) {
-	    current++;
-	    play();
-	}, false);
+	vid.addEventListener('ended', handler_one_time, false);
 
     }
     else{
